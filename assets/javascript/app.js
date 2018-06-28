@@ -117,7 +117,7 @@ var movies = [
 
     {
         id: 9,
-        question: "&#x1F601; &#x1F49B; &#x1F62D; &#x1F499; &#x1F620; &#x2764&#xFE0F; &#x1F61F; &#x1F49C; &#x1F637; &#x1F49A;",
+        question: "&#x1F601; &#x1F49B; &#x1F62D; &#x1F499; <br/> &#x1F620; &#x2764&#xFE0F; &#x1F61F; &#x1F49C; <br/> &#x1F637; &#x1F49A;",
         answers:{
             a: "SNOW WHITE AND THE SEVEN DWARFS",
             b: "POWER RANGERS",
@@ -204,7 +204,7 @@ var movies = [
 
     {
         id: 16,
-        question: "&#x2B1B; &#x1F577; &#x1F916; &#x1F468; &#x1F621; &#x1F34F; &#x1F6E1&#xFE0F; &#x1F1FA&#x1F1F8; &#x1F528; &#x26A1;",
+        question: "&#x2B1B; &#x1F577; &#x1F916; &#x1F468; <br/> &#x1F621; &#x1F34F; &#x1F6E1&#xFE0F; &#x1F1FA&#x1F1F8; <br/> &#x1F528; &#x26A1;",
         answers:{
             a: "JUSTICE LEAGUE",
             b: "THE AVENGERS",

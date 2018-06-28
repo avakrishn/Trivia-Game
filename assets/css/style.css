@@ -1,6 +1,8 @@
 body, html{
     width: 100%;
     height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
     /* background-color: rgba(0, 255, 255, 0.171);   */
 }
 #background{
@@ -9,7 +11,24 @@ body, html{
     background-image: url("../images/background.png");
     background-position: center;
     background-size: contain;
+    background-color: maroon;
     opacity: 0.15;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -5;
+}
+
+#curtain{
+    /* display: none; */
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/curtain.png");
+    background-position: center;
+    background-size: cover;
+    /* opacity: 0.15; */
     top: 0;
     left: 0;
     bottom: 0;
@@ -17,6 +36,7 @@ body, html{
     position: absolute;
     z-index: -1;
 }
+
 div{
    margin: 0 auto;
    width: 50vw;
@@ -26,5 +46,89 @@ h1{
     text-align: center;
     font-size: 5vw;
     font-weight: bolder;
+    margin-top: 3vw;
+    color: maroon;
+}
+
+h2{
+    text-align: center;
+    font-size: 3.6vw;
+    font-weight: bolder;
     margin-top: 2vw;
+    
+}
+
+#play{
+    font-size: 2vw;
+    color: white;
+    background-color: maroon;
+    border-radius: 15px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 3vw;
+    padding: 0.7vw;
+    letter-spacing: 0.2vw;
+}
+
+#play:hover{
+    transform: scale(1.1);
+}
+
+#play:focus {
+    outline:0;
+}
+
+#play:active {
+    transform: translateY(4px);
+}
+
+#ticketContainer{
+    display: none;
+    position: relative;
+    text-align: center;
+}
+#ticket{
+    width: 80%;
+    height: 80%;
+}
+#emoji{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    word-break: break-all;
+    word-wrap: break-word;
+    font-size: 4vw;
+    line-height: 5vw;
+}
+
+#filmContainer{
+    display: none;
+    position: relative;
+    text-align: center;
+    font-size: 1.6vw;
+}
+#film{
+    width: 100%;
+    height: 100%;
+}
+#choices{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+tr{
+    width:100%;
+    height: 100%;
+    display: inline-block;
+    
+}
+
+td{
+    /* width: 10vw; */
+    /* word-break: break-all; */
+    word-wrap: break-word;
+    padding-right:1vw;
+    padding-left:1vw;
 }
