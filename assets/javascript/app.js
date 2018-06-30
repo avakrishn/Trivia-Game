@@ -369,5 +369,36 @@ function noAnswerSelected(){
     
 }
 
+//on click of the element with class 'choice'( div with the answer choice) then clear the timer and check if answer choice is correct or incorrect
+$(document).on('click', '.choice', function (){
+    $('.choice').removeClass('hov');
+    clearTimeout(myTimer);
 
+    // if y is true then user can select an answer choice
+    if(y){
+
+        if($(this).attr('id') == letter){
+            y = false;
+            $('#timer').text("That's Correct!").addClass('correctHeader');
+            $("#"+letter).addClass('correctAnswer');
+            correct ++;
+            qCount++;
+            setTimeout(function(){
+                currentQuestion(qCount)
+            }, 4000);
+        }
+        else{
+            y = false;
+            $('#timer').text("Nope. That's Incorrect.").addClass('incorrectHeader');
+            $("#"+letter).addClass('correctAnswer');
+            $(this).addClass('incorrectAnswer');
+            incorrect ++;
+            qCount++
+            setTimeout(function(){
+                currentQuestion(qCount)
+            }, 4000);
+        }
+    }
+        
+});
 
