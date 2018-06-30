@@ -274,9 +274,9 @@ var movies = [
 ]
 
 //global variables
-var myTimer, letter;
-var timeLeft = 30;
+var myTimer, letter, num, timeLeft;
 var unanswered = 0;
+var qCount = 0;
 
 // var questionTitle = "Can you guess the movie from the emojis?"
 
@@ -284,20 +284,20 @@ $(document).on('click', '#play', function(){
     $(this).hide();
     $('#ticketContainer').show();
     $('#filmContainer').show();
-    currentQuestion();
-    myTimer = setInterval(countdown, 1000);
-    
-
+    currentQuestion(qCount);
 });
 
-function currentQuestion(){
-    for(var i =0; i< movies.length; i++){
-        $('#emoji').html(movies[i].question);
-        $('#a').html(movies[i].answers.a);
-        $('#b').html(movies[i].answers.b);
-        $('#c').html(movies[i].answers.c);
-        $('#d').html(movies[i].answers.d);
-        letter = movies[i].letter;
+function currentQuestion(count){
+    $('td div').removeClass('correctAnswer');
+    if (count < movies.length){
+        timeLeft = 10;
+        myTimer = setInterval(countdown, 1000);
+        $('#emoji').html(movies[count].question);
+        $('#a').html(movies[count].answers.a);
+        $('#b').html(movies[count].answers.b);
+        $('#c').html(movies[count].answers.c);
+        $('#d').html(movies[count].answers.d);
+        letter = movies[count].letter;
     }
 
 }
@@ -306,21 +306,24 @@ function countdown() {
     if (timeLeft == 0) {
         clearTimeout(myTimer);
         $('#timer').text("Time's Up!");
-        $("input[type=radio]").attr('disabled', true);
-        $("label div").removeClass('hov');
+        // $("input[type=radio]").attr('disabled', true);
+        $("td div").removeClass('hov');
         noAnswerSelected();
 
     } else {
         $('#timer').text("Time Remaining: " + timeLeft + ' seconds');
         timeLeft--;
-       
+
     }
 }
 
 function noAnswerSelected(){ 
-    $("#"+letter).css("background-color", "#04b604b7");
-    $("#"+letter).css("border-color", "green");
-
+    $("#"+letter).addClass('correctAnswer');
     unanswered ++;
-
+    qCount++;
+    setTimeout(function(){
+        currentQuestion(qCount)
+    }, 4000);
+    
 }
+
