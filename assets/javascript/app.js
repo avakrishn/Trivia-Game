@@ -253,4 +253,31 @@ var movies = [
     
 ]
 
-var questionTitle = "Can you guess the movie from the emojis?"
+//global variables
+var myTimer;
+var timeLeft = 30;
+
+// var questionTitle = "Can you guess the movie from the emojis?"
+
+$(document).on('click', '#play', function(){
+    $(this).hide();
+    $('#ticketContainer').show();
+    $('#filmContainer').show();
+
+    myTimer = setInterval(countdown, 1000);
+
+    
+    
+});
+
+
+
+function countdown() {
+    if (timeLeft == 0) {
+        clearTimeout(myTimer);
+        $('#timer').text("Time's Up!");
+    } else {
+        $('#timer').text("Time Remaining: " + timeLeft + ' seconds');
+        timeLeft--;
+    }
+}
