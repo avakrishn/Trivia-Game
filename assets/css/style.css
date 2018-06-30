@@ -171,3 +171,8 @@ tr{
     top: 18%;
     right: 1.6%;
 }
+
+#a:hover, #b:hover, #c:hover, #d:hover{
+    background-color: #ffd6bb !important;
+    border: 1px solid #ff6600;
+}
