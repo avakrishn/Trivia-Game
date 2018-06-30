@@ -9,6 +9,7 @@ var movies = [
             d: "PENGUINS OF MADAGASCAR",
         },
         correct: "HAPPY FEET",
+        letter: "c",
     },
 
     {   id: 1,
@@ -20,6 +21,7 @@ var movies = [
             d: "TURTLE, THE INCREDIBLE JOURNEY",
         },
         correct: "TEENAGE MUTANT NINJA TURTLES",
+        letter: "b",
     },
 
 
@@ -33,6 +35,7 @@ var movies = [
             d: "THE NIGHTMARE BEFORE CHRISTMAS",
         },
         correct: "HOME ALONE",
+        letter: "a",
            
     },
 
@@ -46,6 +49,7 @@ var movies = [
             d: "SCOOBY-DOO",
         },
         correct: "FANTASTIC BEASTS AND WHERE TO FIND THEM",
+        letter: "b",
            
     },
 
@@ -59,6 +63,7 @@ var movies = [
             d: "RUSH HOUR",
         },
         correct: "RUSH HOUR",
+        letter: "d",
            
     },
 
@@ -73,6 +78,7 @@ var movies = [
             d: "THE PRINCESS DIARIES",
         },
         correct: "FROZEN",
+        letter: "c",
            
     },
 
@@ -86,6 +92,7 @@ var movies = [
             d: "SPARKLE",
         },
         correct: "HIDDEN FIGURES",
+        letter: "a",
            
     },
 
@@ -99,6 +106,7 @@ var movies = [
             d: "GREMLINS",
         },
         correct: "THE GRINCH",
+        letter: "b",
            
     },
 
@@ -112,6 +120,7 @@ var movies = [
             d: "MURDER ON THE ORIENT EXPRESS",
         },
         correct: "HUGO",
+        letter: "a",
            
     },
 
@@ -125,6 +134,7 @@ var movies = [
             d: "CHARLIE AND THE CHOCOLATE FACTORY",
         },
         correct: "INSIDE OUT",
+        letter: "c",
            
     },
 
@@ -138,6 +148,7 @@ var movies = [
             d: "ET",
         },
         correct: "ET",
+        letter: "d",
            
     },
 
@@ -151,6 +162,7 @@ var movies = [
             d: "BREAKFAST AT TIFFANY'S",
         },
         correct: "BREAKFAST AT TIFFANY'S",
+        letter: "d",
            
     },
 
@@ -164,6 +176,7 @@ var movies = [
             d: "CHARLOTTE'S WEB",
         },
         correct: "MOANA",
+        letter: "c",
     },
 
     {
@@ -176,6 +189,7 @@ var movies = [
             d: "LION",
         },
         correct: "LION",
+        letter: "d",
     },
 
     {
@@ -188,6 +202,7 @@ var movies = [
             d: "FOOTLOOSE",
         },
         correct: "FOOTLOOSE",
+        letter: "d",
     },
 
     {
@@ -200,6 +215,7 @@ var movies = [
             d: "PETER RABBIT",
         },
         correct: "ZOOTOPIA",
+        letter: "c",
     },
 
     {
@@ -212,6 +228,7 @@ var movies = [
             d: "POWER RANGERS",
         },
         correct: "THE AVENGERS",
+        letter: "b",
     },
 
     {
@@ -224,6 +241,7 @@ var movies = [
             d: "BRIDESMAIDS",
         },
         correct: "THE WEDDING SINGER",
+        letter: "c",
     },
 
     {
@@ -236,6 +254,7 @@ var movies = [
             d: "GHOSTBUSTERS",
         },
         correct: "GHOSTBUSTERS",
+        letter: "d",
     },
 
     {
@@ -248,14 +267,16 @@ var movies = [
             d: "ALICE IN WONDERLAND",
         },
         correct: "THE WIZARD OF OZ",
+        letter: "c",
     },
    
     
 ]
 
 //global variables
-var myTimer;
+var myTimer, letter;
 var timeLeft = 30;
+var unanswered = 0;
 
 // var questionTitle = "Can you guess the movie from the emojis?"
 
@@ -263,7 +284,6 @@ $(document).on('click', '#play', function(){
     $(this).hide();
     $('#ticketContainer').show();
     $('#filmContainer').show();
-
     currentQuestion();
     myTimer = setInterval(countdown, 1000);
     
@@ -277,15 +297,30 @@ function currentQuestion(){
         $('#b').html(movies[i].answers.b);
         $('#c').html(movies[i].answers.c);
         $('#d').html(movies[i].answers.d);
+        letter = movies[i].letter;
     }
+
 }
 
 function countdown() {
     if (timeLeft == 0) {
         clearTimeout(myTimer);
         $('#timer').text("Time's Up!");
+        $("input[type=radio]").attr('disabled', true);
+        $("label div").removeClass('hov');
+        noAnswerSelected();
+
     } else {
         $('#timer').text("Time Remaining: " + timeLeft + ' seconds');
         timeLeft--;
+       
     }
+}
+
+function noAnswerSelected(){ 
+    $("#"+letter).css("background-color", "#04b604b7");
+    $("#"+letter).css("border-color", "green");
+
+    unanswered ++;
+
 }
