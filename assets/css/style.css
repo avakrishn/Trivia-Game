@@ -58,7 +58,7 @@ h2{
     
 }
 
-#play{
+.start{
     font-size: 2vw;
     color: white;
     background-color: maroon;
@@ -68,25 +68,32 @@ h2{
     margin-top: 3vw;
     padding: 0.7vw;
     letter-spacing: 0.2vw;
+    margin-bottom: 2%;
 }
 
-#play:hover{
+.start:hover{
     transform: scale(1.1);
 }
 
-#play:focus {
+.start:focus {
     outline:0;
 }
 
-#play:active {
+.start:active {
     transform: translateY(4px);
 }
 
 #timer{
+    width: fit-content;
     text-align: center;
     font-size: 2.5vw;
-    margin: 1% 0 1% 0;
     font-weight: bold;
+    margin: 0 auto;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    padding: 0 1% 0 1%;
+    
+   
 }
 
 #ticketContainer{
@@ -184,7 +191,76 @@ tr{
     border-color: green !important;
 }
 
+.correctHeader{
+    color: black !important;
+    background-color: rgba(3, 179, 3, 0.5);
+    border-radius: 10px;
+
+}
+
 .incorrectAnswer{
     background-color:#ff0000b3 !important;
     border-color: red !important;
+}
+
+.incorrectHeader{
+    color: black !important;
+    background-color: rgba(255, 0, 0, 0.4);
+    border-radius: 10px;
+  
+}
+
+#qNum{
+    position: absolute;
+    transform: rotate(-90deg);
+    right: 8%;
+    bottom: 48%;
+    font-size: 2vw;
+}
+
+#results{
+    display: none;
+    font-size: 1.6vw;
+    position: absolute;
+    top: 16%;
+}
+#done{
+    position: absolute;
+    top: 34%;
+    right: 27%;
+}
+
+
+#playAgain{
+    display: none;
+    justify-content: center;
+}
+
+#correct{
+    float: left;
+    width: fit-content;
+    position: absolute;
+    left: 22%;
+    top: 195%;
+    /* background-color:  */
+}
+
+#incorrect{
+    float: left;
+    width: fit-content;
+    position: absolute;
+    left: 50%;
+    top: 195%;
+    /* background-color:#ff0000b3 !important */
+   
+}
+
+#unanswered{
+    float: left;
+    width: fit-content;
+    position: absolute;
+    top: 500%;
+    left: 40%;
+   
+
 }

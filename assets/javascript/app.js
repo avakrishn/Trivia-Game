@@ -274,23 +274,36 @@ var movies = [
 ]
 
 //global variables
-var myTimer, letter, num, timeLeft;
+var myTimer, letter, num, timeLeft, y;
 var unanswered = 0;
+var correct = 0;
+var incorrect = 0;
 var qCount = 0;
 
 // var questionTitle = "Can you guess the movie from the emojis?"
 
-$(document).on('click', '#play', function(){
+$(document).on('click', '.start', function(){
     $(this).hide();
-    $('#ticketContainer').show();
-    $('#filmContainer').show();
+    $('#ticketContainer, #filmContainer, #qNum, #timer, #emoji').show();
+    $('#results').hide();
     currentQuestion(qCount);
+    
 });
 
 function currentQuestion(count){
-    $('td div').removeClass('correctAnswer');
-    if (count < movies.length){
+    // adds question number to the side ot the ticket stub
+    $('#qNum').html("Q. No. " + (qCount+1) + " / 10")
+    $('.choice').removeClass('correctAnswer incorrectAnswer');
+
+    // adds the hov class that causes the answer choice to hover
+    $('.choice').addClass('hov');
+
+    y = true;
+
+    // displays the question if there are questions left to answer
+    if (count < (movies.length/2)){
         timeLeft = 10;
+        $('#timer').text("Time Remaining: " + timeLeft + ' seconds');
         myTimer = setInterval(countdown, 1000);
         $('#emoji').html(movies[count].question);
         $('#a').html(movies[count].answers.a);
@@ -298,25 +311,51 @@ function currentQuestion(count){
         $('#c').html(movies[count].answers.c);
         $('#d').html(movies[count].answers.d);
         letter = movies[count].letter;
+
+    }
+    //after all questions have been shown then show the Trivia Game Complete screen
+    else{
+        $('#qNum, #timer, #emoji, #filmContainer').hide();
+        $('#results, #playAgain').show();
+        $("#playAgain").css('display', 'flex');
+        $('#corNum').html(correct);
+        $('#incorNum').html(incorrect);
+        $('#unNum').html(unanswered);
+       
+
+
+        qCount = 0;
+        unanswered = 0;
+        correct = 0;
+        incorrect = 0;
+
     }
 
 }
 
+// countdown function that either has text showing the Time Remaining in seconds or Time's Up if no answer choice was selected
 function countdown() {
-    if (timeLeft == 0) {
+    $('#timer').removeClass('correctHeader incorrectHeader').css('color', 'black');
+    if (timeLeft == 1) {
         clearTimeout(myTimer);
-        $('#timer').text("Time's Up!");
+        $('#timer').text("Time's Up!")
         // $("input[type=radio]").attr('disabled', true);
-        $("td div").removeClass('hov');
+        $('.choice').removeClass('hov');
         noAnswerSelected();
 
     } else {
-        $('#timer').text("Time Remaining: " + timeLeft + ' seconds');
+        //timeLeft is decreased before displaying the timer text which fixed the lag.
         timeLeft--;
+        $('#timer').text("Time Remaining: " + timeLeft + ' seconds');
+        
+        if(timeLeft <= 5){
+            $('#timer').css('color', 'red'); 
+        }
 
     }
 }
 
+// if no answer was selected by the user
 function noAnswerSelected(){ 
     $("#"+letter).addClass('correctAnswer');
     unanswered ++;
@@ -326,4 +365,6 @@ function noAnswerSelected(){
     }, 4000);
     
 }
+
+
 

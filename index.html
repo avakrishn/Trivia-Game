@@ -15,36 +15,47 @@
     <div id = "curtain"></div>
     <h1>Emoji Trivia Game!</h1>
     <h2>Can you guess the movie from the emojis?</h2>
-    <button id ="play"> &#x1F3A5; PLAY GAME! &#x1F3AC;</button>
+    <button class="start" id ="play"> &#x1F3A5; PLAY GAME! &#x1F3AC;</button>
+    <button class="start" id ="playAgain"> &#x1F3A5; PLAY AGAIN! &#x1F3AC;</button>
     <h4 id="timer"></h4>
     <div id="ticketContainer">
         <img id="ticket" src="assets/images/ticket.png">
         <h3 id="emoji"></h3>
+        <h3 id="qNum"></h3>
+        <div id="results">
+            <h3id="done">Trivia Completed! Here's how you did!</h3>
+            <div id="correct">
+                <h3>Correct Answers</h3>
+                <h3 id="corNum"></h3>
+            </div>
+            <div id="incorrect">
+                <h3>Incorrect Answers</h3>
+                <h3 id="incorNum"></h3>
+            </div>
+            <div id="unanswered">
+                    <h3>Unanswered</h3>
+                    <h3 id="unNum"></h3>
+            </div>
+
+        </div>
+
     </div>
 
     <div id ="filmContainer">
         <img id="film" src="assets/images/film.png">
-        <table id ="choices">
+        <table>
             <tr>
                 <td>
                     <!-- <label class="labl"> -->
                         <!-- <input type="radio"></input> -->
-                        <div id="a" class="hov"></div>
+                        <div id="a" class="choice"></div>
                     <!-- </label> -->
                 </td>
 
                 <td>
                     <!-- <label class="labl"> -->
                             <!-- <input type="radio"></input> -->
-                            <div id="b" class="hov"></div>
-                    <!-- </label> -->
-                    
-                </td>
-
-                <td>
-                    <!-- <label class="labl"> -->
-                            <!-- <input type="radio"></input> -->
-                            <div id="c" class="hov"></div>
+                            <div id="b" class="choice"></div>
                     <!-- </label> -->
                     
                 </td>
@@ -52,7 +63,15 @@
                 <td>
                     <!-- <label class="labl"> -->
                             <!-- <input type="radio"></input> -->
-                            <div id="d" class="hov"></div>
+                            <div id="c" class="choice"></div>
+                    <!-- </label> -->
+                    
+                </td>
+
+                <td>
+                    <!-- <label class="labl"> -->
+                            <!-- <input type="radio"></input> -->
+                            <div id="d" class="choice"></div>
                     <!-- </label> -->
                     
                 </td>
