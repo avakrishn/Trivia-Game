@@ -283,6 +283,8 @@ var qCount = 0;
 // var questionTitle = "Can you guess the movie from the emojis?"
 
 $(document).on('click', '.start', function(){
+    // randomizes the array of movies
+    movies.sort(function() { return 0.5 - Math.random() });
     $(this).hide();
     $('#ticketContainer, #filmContainer, #qNum, #timer, #emoji').show();
     $('#results').hide();
@@ -321,7 +323,8 @@ function currentQuestion(count){
         $('#corNum').html(correct);
         $('#incorNum').html(incorrect);
         $('#unNum').html(unanswered);
-       
+        // randomizes the array of movies
+        movies.sort(function() { return 0.5 - Math.random() });
 
 
         qCount = 0;
