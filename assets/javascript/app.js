@@ -264,13 +264,21 @@ $(document).on('click', '#play', function(){
     $('#ticketContainer').show();
     $('#filmContainer').show();
 
+    currentQuestion();
     myTimer = setInterval(countdown, 1000);
+    
 
-    
-    
 });
 
-
+function currentQuestion(){
+    for(var i =0; i< movies.length; i++){
+        $('#emoji').html(movies[i].question);
+        $('#a').html(movies[i].answers.a);
+        $('#b').html(movies[i].answers.b);
+        $('#c').html(movies[i].answers.c);
+        $('#d').html(movies[i].answers.d);
+    }
+}
 
 function countdown() {
     if (timeLeft == 0) {

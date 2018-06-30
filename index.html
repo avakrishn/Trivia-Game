@@ -16,29 +16,44 @@
     <h1>Emoji Trivia Game!</h1>
     <h2>Can you guess the movie from the emojis?</h2>
     <button id ="play"> &#x1F3A5; PLAY GAME! &#x1F3AC;</button>
+    <h4 id="timer"></h4>
     <div id="ticketContainer">
-        <h4 id="timer"></h4>
         <img id="ticket" src="assets/images/ticket.png">
-        <h3 id="emoji"> </h3>
+        <h3 id="emoji"></h3>
     </div>
 
     <div id ="filmContainer">
         <img id="film" src="assets/images/film.png">
         <table id ="choices">
             <tr>
-                <td id="a">
+                <td>
+                    <label class="labl">
+                        <input type="radio"></input>
+                        <div id="a"></div>
+                    </label>
+                </td>
+
+                <td>
+                    <label class="labl">
+                            <input type="radio"></input>
+                            <div id="b"></div>
+                    </label>
                     
                 </td>
 
-                <td id="b">
+                <td>
+                    <label class="labl">
+                            <input type="radio"></input>
+                            <div id="c"></div>
+                    </label>
                     
                 </td>
 
-                <td id="c">
-                    
-                </td>
-
-                <td id="d">
+                <td>
+                    <label class="labl">
+                            <input type="radio"></input>
+                            <div id="d"></div>
+                    </label>
                     
                 </td>
             </tr>

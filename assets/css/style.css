@@ -82,6 +82,13 @@ h2{
     transform: translateY(4px);
 }
 
+#timer{
+    text-align: center;
+    font-size: 2.5vw;
+    margin: 1% 0 1% 0;
+    font-weight: bold;
+}
+
 #ticketContainer{
     display: none;
     position: relative;
@@ -106,18 +113,13 @@ h2{
     display: none;
     position: relative;
     text-align: center;
-    font-size: 1.6vw;
+    font-size: 1.5vw;
 }
 #film{
     width: 100%;
     height: 100%;
 }
-#choices{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
+
 tr{
     width:100%;
     height: 100%;
@@ -125,10 +127,47 @@ tr{
     
 }
 
-td{
-    /* width: 10vw; */
-    /* word-break: break-all; */
+.labl > input{ /* HIDE RADIO */
+    visibility: hidden; /* Makes input not-clickable */
+    position: absolute; /* Remove input from document flow */
+}
+.labl > input + div{ /* DIV STYLES */
+    cursor:pointer;
+    border:2px solid transparent;
+}
+.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
+    background-color: #ffd6bb !important;
+    border: 1px solid #ff6600;
+}
+#a, #b, #c, #d{
+    position: absolute;
+    width: 10.6vw;
+    height: 8.7vw;
     word-wrap: break-word;
-    padding-right:1vw;
-    padding-left:1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1%;
+    padding-left: 1%;
+    background-color: #ffffffaf;
+}
+
+#a{
+    top: 18%;
+    left: 0.5%;
+}
+
+#b{
+    top: 18%;
+    left: 25.3%;
+    
+}
+#c{
+    top: 18%;
+    right: 26.4%;
+
+}
+#d{
+    top: 18%;
+    right: 1.6%;
 }
