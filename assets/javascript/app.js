@@ -282,7 +282,9 @@ var qCount = 0;
 
 // var questionTitle = "Can you guess the movie from the emojis?"
 
-$(document).on('click', '.start', function(){
+$(document).on(' touchstart click', '.start', function(e){
+    e.stopPropagation(); 
+    e.preventDefault();
     // randomizes the array of movies
     movies.sort(function() { return 0.5 - Math.random() });
     $(this).hide();
@@ -372,7 +374,9 @@ function noAnswerSelected(){
 }
 
 //on click of the element with class 'choice'( div with the answer choice) then clear the timer and check if answer choice is correct or incorrect
-$(document).on('click', '.choice', function (){
+$(document).on(' touchstart click', '.choice', function (e){
+    e.stopPropagation(); 
+    e.preventDefault();
     $('.choice').removeClass('hov');
     clearTimeout(myTimer);
 
