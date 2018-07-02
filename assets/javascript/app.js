@@ -342,7 +342,6 @@ function countdown() {
     if (timeLeft == 1) {
         clearTimeout(myTimer);
         $('#timer').text("Time's Up!");
-        // $("input[type=radio]").attr('disabled', true);
         $('.choice').removeClass('hov');
         noAnswerSelected();
 

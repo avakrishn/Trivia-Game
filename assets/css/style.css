@@ -134,18 +134,6 @@ tr{
     
 }
 
-.labl > input{ /* HIDE RADIO */
-    visibility: hidden; /* Makes input not-clickable */
-    position: absolute; /* Remove input from document flow */
-}
-.labl > input + div{ /* DIV STYLES */
-    cursor:pointer;
-    border:2px solid transparent;
-}
-.labl > input:checked + div{ /* (RADIO CHECKED) DIV STYLES */
-    background-color: #ffd6bb !important;
-    border: 1px solid #ff6600;
-}
 #a, #b, #c, #d{
     position: absolute;
     width: 10.6vw;
