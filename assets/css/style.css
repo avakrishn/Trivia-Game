@@ -38,6 +38,39 @@ body, html{
     z-index: -1;
 }
 
+#curtainRight{
+    width: auto;
+    height: 100%;
+    background-image: url("../images/curtain-right.png");
+    background-position: right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+#curtainLeft{
+    width: auto;
+    height: 100%;
+    background-image: url("../images/curtain-left.png");
+    background-position: left;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+}
+
 .portfolio{
     position: absolute;
     top: 0px;
@@ -48,7 +81,7 @@ body, html{
     font-size: 1.1vw;
     border-radius: 5px;
     background-color: transparent;
-    border: 2px #ad3232 solid;
+    border: 0.2vw #ad3232 solid;
     color: #ad3232;
     margin-left:1vw;
     margin-top: 1vw;
@@ -301,18 +334,153 @@ tr{
     border-radius: 5px;
 }
 
-@media screen and (max-width: 650px) and (orientation:portrait)
+@media screen and (max-device-width: 480px) and (max-width: 650px) and (orientation:portrait)
 {
    #orientation{
        display: block;
    }
-
+   #curtainRight{
+        display:none;
+    }
+    #curtainLeft{
+        display:none;
+    }
 
 }
-@media screen and (max-width: 650px) and (orientation:landscape)
+
+
+@media screen and (max-device-width: 480px) and (max-width: 650px) and (orientation:landscape)
 {
    #orientation{
     display: none;
     }
    
+}
+
+@media screen and (max-device-width: 800px) and (orientation: portrait)
+{
+    #curtainRight{
+        right: -31vw;
+    }
+    #curtainLeft{
+        left: -31vw;
+    }
+}
+
+
+
+@media screen and (max-width: 1230px) and (min-device-width: 1024px)
+{
+    #curtainRight{
+        right: -6vw;
+    }
+    #curtainLeft{
+        left: -6vw;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-device-width: 1024px)
+{
+    #curtainRight{
+        right: -8vw;
+    }
+    #curtainLeft{
+        left: -8vw;
+    }
+
+}
+
+@media screen and (max-width: 850px) and (min-device-width: 1024px)
+{
+    #curtainRight{
+        right: -12vw;
+    }
+    #curtainLeft{
+        left: -12vw;
+    }
+
+}
+
+@media screen and (max-width: 725px)  and (min-device-width: 1024px)
+{
+    #curtainRight{
+        right: -16vw;
+    }
+    #curtainLeft{
+        left: -16vw;
+    }
+
+}
+
+@media screen and (max-width: 640px)  and (min-device-width: 1024px)
+{
+    #curtainRight{
+        right: -20vw;
+    }
+    #curtainLeft{
+        left: -20vw;
+    }
+
+}
+
+@media screen and (max-width: 570px) and (min-device-width: 1024px)
+{
+    #curtainRight{
+        right: -26vw;
+    }
+    #curtainLeft{
+        left: -26vw;
+    }
+
+}
+
+@media screen and (max-width: 500px) and (min-device-width: 1024px)
+{
+    #curtainRight{
+        right: -30vw;
+    }
+    #curtainLeft{
+        left: -30vw;
+    }
+
+}
+
+@media screen and (max-width: 440px) and (min-device-width: 1024px)
+{
+    #curtainRight{
+        right: -21vw;
+    }
+    #curtainLeft{
+        left: -21vw;
+    }
+
+} 
+
+@media screen and (orientation:landscape)
+{
+    #curtainRight{
+        right: -4vw;
+    }
+    #curtainLeft{
+        left: -4vw;
+    }
+   
+}
+
+/* ----------- iPad Pro -----------
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+      #curtainRight, #curtainLeft{
+          display: none;
+      }
+}
+
+@media screen and (device-width: 768px) and (device-height: 1024px) 
+{
+    #curtainRight, #curtainLeft{
+        display: none;
+    }
 }
