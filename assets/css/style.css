@@ -147,6 +147,12 @@ h2{
     line-height: 5vw;
 }
 
+#orientation{
+    display: none;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+}
+
 #filmContainer{
     display: none;
     position: relative;
@@ -293,4 +299,20 @@ tr{
     color: #ffffff;
     padding: 0.7%;
     border-radius: 5px;
+}
+
+@media screen and (max-width: 650px) and (orientation:portrait)
+{
+   #orientation{
+       display: block;
+   }
+
+
+}
+@media screen and (max-width: 650px) and (orientation:landscape)
+{
+   #orientation{
+    display: none;
+    }
+   
 }
