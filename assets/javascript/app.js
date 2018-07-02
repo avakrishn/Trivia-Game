@@ -98,7 +98,7 @@ var movies = [
 
     {
         id: 7,
-        question: "&#x1F467; &#x1F49A; &#x1F608; &#x1F497; &#x1F384;",
+        question: "&#x1F467&#x1F3FC &#x1F49A; &#x1F608; &#x1F497; &#x1F384;",
         answers:{
             a: "THE NIGHTMARE BEFORE CHRISTMAS",
             b: "THE GRINCH",
@@ -140,7 +140,7 @@ var movies = [
 
     {
         id: 10,
-        question: "&#x1F47D; &#x260E&#xFE0F; &#x1F3E0; &#x1F6B2; &#x1F319;",
+        question: "&#x1F47D; &#x260E&#xFE0F; &#x1F3E0; &#x1F6B2; &#x1F311;",
         answers:{
             a: "MEN IN BLACK",
             b: "10 CLOVERFIELD LANE",
@@ -181,7 +181,7 @@ var movies = [
 
     {
         id: 13,
-        question: "&#x1F981; &#x1F682; &#x1F1EE&#x1F1F3;  &#x27A1&#xFE0F; &#x1F1E6&#x1F1FA; &#x1F62D;",
+        question: "&#x1F981; &#x1F682; &#x1F1EE&#x1F1F3;  <br/> &#x27A1&#xFE0F; &#x1F1E6&#x1F1FA; &#x1F62D;",
         answers:{
             a: "LION KING",
             b: "SLUMDOG MILLIONAIRE",
@@ -194,7 +194,7 @@ var movies = [
 
     {
         id: 14,
-        question: "&#x1F6AB; &#x1F57A; &#x1F483; &#x1F6AB; &#x1F3A4; &#x1F3B6;",
+        question: "&#x1F6AB; &#x1F483&#x1F3FC; &#x1F57A&#x1F3FC; <br/> &#x1F6AB; &#x1F3A4; &#x1F3B6;",
         answers:{
             a: "LA LA LAND",
             b: "HAIRSPRAY",
@@ -220,7 +220,7 @@ var movies = [
 
     {
         id: 16,
-        question: "&#x2B1B; &#x1F577; &#x1F916; &#x1F468; <br/> &#x1F621; &#x1F34F; &#x1F6E1&#xFE0F; &#x1F1FA&#x1F1F8; <br/> &#x1F528; &#x26A1;",
+        question: "&#x2B1B; &#x1F577; &#x1F916; &#x1F468&#x1F3FB; <br/> &#x1F621; &#x1F34F; &#x1F6E1&#xFE0F; &#x1F1FA&#x1F1F8; <br/> &#x1F528; &#x26A1;",
         answers:{
             a: "JUSTICE LEAGUE",
             b: "THE AVENGERS",
@@ -233,7 +233,7 @@ var movies = [
 
     {
         id: 17,
-        question: "&#x1F470; &#x1F935; &#x1F3A4; &#x1F3B6;",
+        question: "&#x1F470&#x1F3FC; &#x1F935&#x1F3FB; &#x1F3A4; &#x1F3B6;",
         answers:{
             a: "WEDDING CRASHERS",
             b: "MAMA MIA",
@@ -305,6 +305,7 @@ function currentQuestion(count){
     // displays the question if there are questions left to answer
     if (count < (movies.length/2)){
         timeLeft = 10;
+        $('#timer').removeClass('correctHeader incorrectHeader').css('color', '#000000');
         $('#timer').text("Time Remaining: " + timeLeft + ' seconds');
         myTimer = setInterval(countdown, 1000);
         $('#emoji').html(movies[count].question);
@@ -338,10 +339,9 @@ function currentQuestion(count){
 
 // countdown function that either has text showing the Time Remaining in seconds or Time's Up if no answer choice was selected
 function countdown() {
-    $('#timer').removeClass('correctHeader incorrectHeader').css('color', 'black');
     if (timeLeft == 1) {
         clearTimeout(myTimer);
-        $('#timer').text("Time's Up!")
+        $('#timer').text("Time's Up!");
         // $("input[type=radio]").attr('disabled', true);
         $('.choice').removeClass('hov');
         noAnswerSelected();
@@ -352,20 +352,23 @@ function countdown() {
         $('#timer').text("Time Remaining: " + timeLeft + ' seconds');
         
         if(timeLeft <= 5){
-            $('#timer').css('color', 'red'); 
+            $('#timer').css('color', '#e30404'); 
         }
 
     }
 }
 
 // if no answer was selected by the user
+//methods used are setTimeout and addClass
 function noAnswerSelected(){ 
+    y = false;
     $("#"+letter).addClass('correctAnswer');
     unanswered ++;
     qCount++;
     setTimeout(function(){
         currentQuestion(qCount)
     }, 4000);
+    
     
 }
 
