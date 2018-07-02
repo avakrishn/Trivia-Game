@@ -11,7 +11,7 @@ body, html{
     background-image: url("../images/background.png");
     background-position: center;
     background-size: contain;
-    background-color: maroon;
+    background-color: #800000;
     opacity: 0.15;
     top: 0;
     left: 0;
@@ -47,7 +47,7 @@ h1{
     font-size: 5vw;
     font-weight: bolder;
     margin-top: 3vw;
-    color: maroon;
+    color: #800000;
 }
 
 h2{
@@ -61,7 +61,7 @@ h2{
 .start{
     font-size: 2vw;
     color: white;
-    background-color: maroon;
+    background-color: #800000;
     border-radius: 15px;
     display: block;
     margin: 0 auto;
@@ -188,24 +188,24 @@ tr{
 
 .correctAnswer{
     background-color:#04b604b7 !important;
-    border-color: green !important;
+    border-color: #008000 !important;
 }
 
 .correctHeader{
-    color: black !important;
-    background-color: rgba(3, 179, 3, 0.5);
+    color: #000000 !important;
+    background-color: #03b30380;
     border-radius: 10px;
 
 }
 
 .incorrectAnswer{
     background-color:#ff0000b3 !important;
-    border-color: red !important;
+    border-color: #ff0000 !important;
 }
 
 .incorrectHeader{
-    color: black !important;
-    background-color: rgba(255, 0, 0, 0.4);
+    color: #000000 !important;
+    background-color: #ff000066;
     border-radius: 10px;
   
 }
@@ -221,8 +221,11 @@ tr{
 #results{
     display: none;
     font-size: 1.6vw;
+    font-weight: bold;
     position: absolute;
     top: 16%;
+    right: 1.5%;
+    
 }
 #done{
     position: absolute;
@@ -242,7 +245,10 @@ tr{
     position: absolute;
     left: 22%;
     top: 195%;
-    /* background-color:  */
+    background-color: #0b920bd0;
+    color: white;
+    padding: 0.7%;
+    border-radius: 5px;
 }
 
 #incorrect{
@@ -251,7 +257,10 @@ tr{
     position: absolute;
     left: 50%;
     top: 195%;
-    /* background-color:#ff0000b3 !important */
+    background-color: #ff0000cb;
+    color: #ffffff;
+    padding: 0.7%;
+    border-radius: 5px;
    
 }
 
@@ -261,6 +270,8 @@ tr{
     position: absolute;
     top: 500%;
     left: 40%;
-   
-
+    background-color: #0000ffc2;
+    color: #ffffff;
+    padding: 0.7%;
+    border-radius: 5px;
 }
