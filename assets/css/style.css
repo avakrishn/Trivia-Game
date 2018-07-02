@@ -4,6 +4,7 @@ body, html{
     margin: 0 auto;
     overflow: hidden;
     /* background-color: rgba(0, 255, 255, 0.171);   */
+    font-family: 'Song Myung', serif;
 }
 #background{
     width: 100%;
@@ -35,6 +36,34 @@ body, html{
     right: 0;
     position: absolute;
     z-index: -1;
+}
+
+.portfolio{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 30;
+    width: 6.5vw;
+    height: 3vw;
+    font-size: 1.1vw;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 2px #ad3232 solid;
+    color: #ad3232;
+    margin-left:1vw;
+    margin-top: 1vw;
+    min-width: fit-content;
+}
+
+.portfolio:hover{
+    border-color: maroon;
+    background-color: maroon;
+    color: white;
+    cursor: pointer;
+}
+
+.portfolio:focus {
+    outline: 0;
 }
 
 div{
@@ -69,10 +98,12 @@ h2{
     padding: 0.7vw;
     letter-spacing: 0.2vw;
     margin-bottom: 2%;
+    font-family: 'Song Myung', serif;
 }
 
 .start:hover{
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .start:focus {
@@ -112,7 +143,7 @@ h2{
     transform: translate(-50%, -50%);
     word-break: break-all;
     word-wrap: break-word;
-    font-size: 4vw;
+    font-size: 4.2vw;
     line-height: 5vw;
 }
 
