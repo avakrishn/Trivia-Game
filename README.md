@@ -7,7 +7,7 @@
 * [Play the Game!](#play)
     * [Instructions](#rules)
 
-* [Demo](#Demo)
+* [Demo](#demo)
 
 ### **<a id="about"></a> About the Emoji Trivia Game**
 An interactive and timed trivia app where users guess the movie based on the emojis displayed. The app features dynamically updated HTML and CSS powered by JavaScript code for the logic and jQuery to manipulate the HTML. 
@@ -64,6 +64,17 @@ An interactive and timed trivia app where users guess the movie based on the emo
 
 ### **<a id="demo"></a>Demo Images**
 
+* **Game Start**:
+![Game Start](https://raw.githubusercontent.com/avakrishn/Trivia-Game/master/assets/images/game-start.png)
+
+* **User must answer the trivia question before timer runs out**:
+![Game Start](https://raw.githubusercontent.com/avakrishn/Trivia-Game/master/assets/images/game-question.png)
+
+* **After user answers the trivia question**:
+![Game Start](https://raw.githubusercontent.com/avakrishn/Trivia-Game/master/assets/images/game-q-result.png)
+
+* **Game Scores**:
+![Game Scores](https://raw.githubusercontent.com/avakrishn/Trivia-Game/master/assets/images/game-score.png)
  
 
 ### **Future Code Development:**
