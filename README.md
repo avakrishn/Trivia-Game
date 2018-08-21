@@ -64,14 +64,10 @@ An interactive and timed trivia app where users guess the movie based on the emo
 
 ### **<a id="demo"></a>Demo Images**
 
-    * **Game Start**:
-    ![Game Start](https://raw.githubusercontent.com/avakrishn/Word-Guess-Game/master/assets/images/game-start.png)
-
-    * **Win a Round**:
-    ![Game Win](https://raw.githubusercontent.com/avakrishn/Word-Guess-Game/master/assets/images/game-win.png)
+ 
 
 ### **Future Code Development:**
 * Source code will be developed over time to handle new features in the future.
 
 ### **Issues:**
-* If you find an issue while using the app or have a request, <a href="https://github.com/avakrishn/Word-Guess-Game/issues" target="_blank">log the issue or request here</a>. These issues will be addressed in a future code update.
+* If you find an issue while using the app or have a request, <a href="https://github.com/avakrishn/Trivia-Game/issues" target="_blank">log the issue or request here</a>. These issues will be addressed in a future code update.
